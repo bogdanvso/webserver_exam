@@ -46,6 +46,7 @@ int main(int argc, char ** argv)
         std::cout << "Daemon pid = " << procId << std::endl;
         return 0;
     }
+    signal(SIGHUP, SIG_IGN);
 
     //unmask the file mode
     umask(0);
@@ -90,4 +91,4 @@ int main(int argc, char ** argv)
     fout.close();
 
     return 0;
-}
+}//!
