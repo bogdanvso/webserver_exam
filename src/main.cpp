@@ -37,6 +37,7 @@ int main(int argc, char ** argv)
 
     pid_t procId = 0, sessionId = 0;
     
+    signal(SIGHUP, SIG_IGN);
     procId = fork();
     
     if(procId < 0)
@@ -91,4 +92,4 @@ int main(int argc, char ** argv)
     fout.close();
 
     return 0;
-}//!
+}
