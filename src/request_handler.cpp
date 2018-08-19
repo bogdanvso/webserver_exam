@@ -32,7 +32,7 @@ namespace server
 
         //url to path
         std::string req_path;
-        if(!url_decode(req.uri, req_path))
+        if(!url_decode(sReqUri, req_path))
         {
             //std::cout << "decode err!\n" << req_path << std::endl;
 
