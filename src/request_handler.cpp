@@ -19,6 +19,17 @@ namespace server
             << "http ver = " << req.http_version_major << ' ' 
             << req.http_version_minor << std::endl;*/
 
+        /*
+        from comments:
+        Запросы посылаются только в виде GET с путем, так что всякие cgi-параметры надо отрезать 
+        (просто замените '?' на '\0' в пути).
+        */
+        
+        std::string sReqUri = req.uri;
+        std::replace(sReqUri.begin(), sReqUri.end(), '?', '\0');
+
+    
+
         //url to path
         std::string req_path;
         if(!url_decode(req.uri, req_path))
